@@ -1,0 +1,106 @@
+/* General Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    overflow-y: scroll;
+}
+
+/* Header and Sections */
+header, section {
+    border-radius: 12px;
+    background-color: #1e1e1e;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    animation: float 6s ease-in-out infinite;  /* Added floating animation */
+}
+
+/* Floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Clock */
+#clock {
+    font-size: 24px;
+    text-align: right;
+}
+
+/* Toggle Container */
+#toggle-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.dark-switch .slider {
+    background-color: #1e1e1e;
+}
+
+/* Snowfall */
+.snowflake {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    top: 0;
+    animation: fall linear 5s infinite;  /* Modified duration */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+#snowfall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+    width: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+body::-webkit-scrollbar:hover {
+    opacity: 1;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
