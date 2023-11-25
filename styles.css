@@ -6,27 +6,59 @@ body.dark-mode {
     overflow-y: scroll;
 }
 
-/* Header and Sections */
+/* Animated Gradient Border */
+@keyframes animatedGradient {
+    0% { border-image: linear-gradient(45deg, #ff0000, #00ff00, #0000ff) 1; }
+    33% { border-image: linear-gradient(45deg, #00ff00, #0000ff, #ff0000) 1; }
+    66% { border-image: linear-gradient(45deg, #0000ff, #ff0000, #00ff00) 1; }
+    100% { border-image: linear-gradient(45deg, #ff0000, #00ff00, #0000ff) 1; }
+}
+
+/* Base Styles for Headers and Sections */
 header, section {
     border-radius: 12px;
     background-color: #1e1e1e;
     margin: 20px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    animation: float 6s ease-in-out infinite;  /* Added floating animation */
+    border: 3px solid transparent; /* For border-image */
 }
 
-/* Floating animation */
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+/* Individual Floating Animations */
+@keyframes floatHeader {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes floatTech {
+    0%, 100% { transform: translateY(-10px); }
+    50% { transform: translateY(10px); }
+}
+
+@keyframes floatPersonal {
+    0%, 100% { transform: translateY(-15px); }
+    50% { transform: translateY(15px); }
+}
+
+@keyframes floatFreeTime {
+    0%, 100% { transform: translateY(-5px); }
+    50% { transform: translateY(5px); }
+}
+
+/* Applying Individual Animations */
+header {
+    animation: floatHeader 6s ease-in-out infinite, animatedGradient 3s linear infinite;
+}
+
+section#tech {
+    animation: floatTech 7s ease-in-out infinite, animatedGradient 4s linear infinite;
+}
+
+section#personal {
+    animation: floatPersonal 5s ease-in-out infinite, animatedGradient 5s linear infinite;
+}
+
+section#free-time {
+    animation: floatFreeTime 8s ease-in-out infinite, animatedGradient 3.5s linear infinite;
 }
 
 /* Clock */
@@ -63,16 +95,12 @@ header, section {
     border-radius: 50%;
     opacity: 0.7;
     top: 0;
-    animation: fall linear 5s infinite;  /* Modified duration */
+    animation: fall linear 5s infinite;
 }
 
 @keyframes fall {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(100vh);
-    }
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
 }
 
 #snowfall {
