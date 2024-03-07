@@ -16,3 +16,4 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('white-pulse');
     });
 });
+// Minor Updates!
