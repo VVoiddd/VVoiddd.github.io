@@ -1,78 +1,11 @@
-/* General Styles */
-body.dark-mode {
+body {
     background-color: #121212;
-    color: #ffffff;
     font-family: Arial, sans-serif;
-    overflow-y: scroll;
 }
 
-/* Base Styles for Headers and Sections */
-header, section {
+#game-canvas {
+    border: 1px solid #5e0f80;
     border-radius: 12px;
-    background-color: #1e1e1e;
     margin: 20px;
     padding: 20px;
-    position: relative;
-    border: 3px solid #5e0f80; /* Set a specific border color */
-}
-
-/* Pulse Effect */
-@keyframes pulseEffect {
-    0% {
-        box-shadow: 0 0 0 0px rgba(94, 15, 128, 0.7);
-    }
-    50% {
-        box-shadow: 0 0 0 15px rgba(94, 15, 128, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0px rgba(94, 15, 128, 0);
-    }
-}
-
-header, section {
-    animation: pulseEffect 3s infinite;
-}
-
-/* Custom Scrollbar */
-body::-webkit-scrollbar {
-    width: 10px;
-}
-
-body::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-/* Snowfall */
-#snowfall {
-    display: none; /* Controlled by JavaScript, shown when snowToggle is checked */
-}
-
-/* Toggle Container */
-#toggle-container {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-}
-
-/* Switch */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.dark-switch .slider {
-    background-color: #1e1e1e;
-}
-
-/* Clock */
-#clock {
-    font-size: 24px;
-    text-align: right;
 }
