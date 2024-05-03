@@ -9,3 +9,18 @@ body {
     margin: 20px;
     padding: 20px;
 }
+
+#controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+#colorPicker {
+    margin-right: 10px;
+}
+
+#brushSelect, #brushSize {
+    margin-right: 10px;
+}

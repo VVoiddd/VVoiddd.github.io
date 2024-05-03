@@ -7,6 +7,16 @@
 </head>
 <body>
     <canvas id="drawingCanvas" width="800" height="600"></canvas>
+    <div id="controls">
+        <input type="color" id="colorPicker" value="#ffffff">
+        <label for="brushSelect">Brush:</label>
+        <select id="brushSelect">
+            <option value="solid">Solid</option>
+            <option value="dashed">Dashed</option>
+        </select>
+        <label for="brushSize">Brush size:</label>
+        <input type="range" id="brushSize" min="1" max="50" value="5">
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

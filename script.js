@@ -1,5 +1,6 @@
 const canvas = document.getElementById('drawingCanvas');
 const ctx = canvas.getContext('2d');
+const controls = document.getElementById('controls');
 
 let drawing = false;
 let startX, startY;
@@ -48,7 +49,19 @@ function drawLine(x1, y1, x2, y2) {
     ctx.beginPath();
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
-    ctx.strokeStyle = 'white';
-    ctx.lineWidth = 5;
+
+    const color = document.getElementById('colorPicker').value;
+    ctx.strokeStyle = color;
+
+    const brushType = document.getElementById('brushSelect').value;
+    if (brushType === 'dashed') {
+        ctx.setLineDash([10, 10]);
+    } else {
+        ctx.setLineDash([]);
+    }
+
+    const brushSize = document.getElementById('brushSize').value;
+    ctx.lineWidth = brushSize;
+
     ctx.stroke();
 }
