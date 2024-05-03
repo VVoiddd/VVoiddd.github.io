@@ -1,11 +1,3 @@
-// Get the canvas element
-const canvas = document.getElementById('game-canvas');
-const ctx = canvas.getContext('2d');
-
-// Set the canvas dimensions
-canvas.width = 800;
-canvas.height = 600;
-
 // Game variables
 let playerX = canvas.width / 2;
 let playerY = canvas.height / 2;
@@ -76,6 +68,19 @@ function update() {
     requestAnimationFrame(update);
 }
 
+// Distance function
+function distance(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+}
+
+// Initialize stars and asteroids arrays
+for (let i = 0; i < 100; i++) {
+    stars.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height });
+}
+for (let i = 0; i < 10; i++) {
+    asteroids.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height });
+}
+
 // Start the game loop
 update();
 
@@ -87,8 +92,3 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keyup', (event) => {
     delete keysDown[event.key];
 });
-
-// Distance function
-function distance(x1, y1, x2, y2) {
-    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-}
