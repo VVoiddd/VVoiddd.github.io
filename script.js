@@ -1,9 +1,23 @@
 // Game variables
-let playerX = canvas.width / 2;
-let playerY = canvas.height / 2;
-let playerSpeed = 5;
-let stars = [];
-let asteroids = [];
+const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = 800;
+canvas.height = 600;
+document.body.appendChild(canvas);
+
+let player = {
+    x: 50,
+    y: canvas.height - 100,
+    width: 50,
+    height: 50,
+    speed: 10,
+    jumping: false,
+    jumpSpeed: -15,
+};
+
+let platforms = [];
+platforms.push({ x: 0, y: canvas.height - 50, width: canvas.width, height: 50 });
+
 let score = 0;
 
 // Game loop
@@ -11,84 +25,68 @@ function update() {
     // Clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Move the player
-    if (keysDown['ArrowUp']) {
-        playerY -= playerSpeed;
-    }
-    if (keysDown['ArrowDown']) {
-        playerY += playerSpeed;
-    }
-    if (keysDown['ArrowLeft']) {
-        playerX -= playerSpeed;
-    }
-    if (keysDown['ArrowRight']) {
-        playerX += playerSpeed;
-    }
-
     // Draw the player
     ctx.fillStyle = 'white';
-    ctx.fillRect(playerX, playerY, 20, 20);
+    ctx.fillRect(player.x, player.y, player.width, player.height);
 
-    // Update and draw stars
-    for (let i = 0; i < stars.length; i++) {
-        stars[i].x += Math.random() * 2 - 1;
-        stars[i].y += Math.random() * 2 - 1;
-        ctx.fillStyle = 'yellow';
-        ctx.fillRect(stars[i].x, stars[i].y, 5, 5);
+    // Update player position
+    if (keysDown['ArrowUp'] && !player.jumping) {
+        player.jumping = true;
     }
-
-    // Update and draw asteroids
-    for (let i = 0; i < asteroids.length; i++) {
-        asteroids[i].x += Math.random() * 2 - 1;
-        asteroids[i].y += Math.random() * 2 - 1;
-        ctx.fillStyle = 'red';
-        ctx.fillRect(asteroids[i].x, asteroids[i].y, 10, 10);
+    if (player.jumping) {
+        player.y += player.jumpSpeed;
+        player.jumpSpeed += 1;
+        if (player.jumpSpeed > 0) {
+            player.jumping = false;
+            player.jumpSpeed = -15;
+        }
+    }
+    if (keysDown['ArrowLeft']) {
+        player.x -= player.speed;
+    }
+    if (keysDown['ArrowRight']) {
+        player.x += player.speed;
     }
 
     // Check for collisions
-    for (let i = 0; i < asteroids.length; i++) {
-        if (distance(playerX, playerY, asteroids[i].x, asteroids[i].y) < 20) {
-            alert('Game Over! Your score was ' + score);
-            return;
+    for (let i = 0; i < platforms.length; i++) {
+        let platform = platforms[i];
+        if (
+            player.x < platform.x + platform.width &&
+            player.x + player.width > platform.x &&
+            player.y < platform.y + platform.height &&
+            player.y + player.height > platform.y
+        ) {
+            if (player.jumping) {
+                player.jumping = false;
+                player.jumpSpeed = -15;
+            }
+            player.y = platform.y - player.height;
         }
     }
 
-    // Add new stars and asteroids
-    if (Math.random() < 0.1) {
-        stars.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height });
-    }
-    if (Math.random() < 0.05) {
-        asteroids.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height });
+    // Draw platforms
+    ctx.fillStyle = 'green';
+    for (let i = 0; i < platforms.length; i++) {
+        let platform = platforms[i];
+        ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
     }
 
     // Update score
     score++;
+    document.getElementById('score').innerText = 'Score: ' + score;
 
     // Request the next frame
     requestAnimationFrame(update);
 }
-
-// Distance function
-function distance(x1, y1, x2, y2) {
-    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-}
-
-// Initialize stars and asteroids arrays
-for (let i = 0; i < 100; i++) {
-    stars.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height });
-}
-for (let i = 0; i < 10; i++) {
-    asteroids.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height });
-}
-
-// Start the game loop
-update();
 
 // Keyboard input
 const keysDown = {};
 document.addEventListener('keydown', (event) => {
     keysDown[event.key] = true;
 });
-document.addEventListener('keyup', (event) => {
-    delete keysDown[event.key];
+document.addEventListener('keyup', (event) => {delete keysDown[event.key];
 });
+
+// Start the game loop
+update();
