@@ -1,92 +1,54 @@
-// Game variables
-const canvas = document.createElement('canvas');
+const canvas = document.getElementById('drawingCanvas');
 const ctx = canvas.getContext('2d');
-canvas.width = 800;
-canvas.height = 600;
-document.body.appendChild(canvas);
 
-let player = {
-    x: 50,
-    y: canvas.height - 100,
-    width: 50,
-    height: 50,
-    speed: 10,
-    jumping: false,
-    jumpSpeed: -15,
-};
+let drawing = false;
+let startX, startY;
 
-let platforms = [];
-platforms.push({ x: 0, y: canvas.height - 50, width: canvas.width, height: 50 });
+// Add event listeners for mouse and touch events
+canvas.addEventListener('mousedown', (event) => {
+    drawing = true;
+    startX = event.clientX - canvas.offsetLeft;
+    startY = event.clientY - canvas.offsetTop;
+});
 
-let score = 0;
+canvas.addEventListener('mouseup', () => {
+    drawing = false;
+});
 
-// Game loop
-function update() {
-    // Clear the canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Draw the player
-    ctx.fillStyle = 'white';
-    ctx.fillRect(player.x, player.y, player.width, player.height);
-
-    // Update player position
-    if (keysDown['ArrowUp'] && !player.jumping) {
-        player.jumping = true;
+canvas.addEventListener('mousemove', (event) => {
+    if (drawing) {
+        drawLine(startX, startY, event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+        startX = event.clientX - canvas.offsetLeft;
+        startY = event.clientY - canvas.offsetTop;
     }
-    if (player.jumping) {
-        player.y += player.jumpSpeed;
-        player.jumpSpeed += 1;
-        if (player.jumpSpeed > 0) {
-            player.jumping = false;
-            player.jumpSpeed = -15;
-        }
-    }
-    if (keysDown['ArrowLeft']) {
-        player.x -= player.speed;
-    }
-    if (keysDown['ArrowRight']) {
-        player.x += player.speed;
-    }
+});
 
-    // Check for collisions
-    for (let i = 0; i < platforms.length; i++) {
-        let platform = platforms[i];
-        if (
-            player.x < platform.x + platform.width &&
-            player.x + player.width > platform.x &&
-            player.y < platform.y + platform.height &&
-            player.y + player.height > platform.y
-        ) {
-            if (player.jumping) {
-                player.jumping = false;
-                player.jumpSpeed = -15;
-            }
-            player.y = platform.y - player.height;
-        }
+canvas.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    drawing = true;
+    startX = event.touches[0].clientX - canvas.offsetLeft;
+    startY = event.touches[0].clientY - canvas.offsetTop;
+});
+
+canvas.addEventListener('touchend', () => {
+    drawing = false;
+});
+
+canvas.addEventListener('touchmove', (event) => {
+    event.preventDefault();
+    if (drawing) {
+        drawLine(startX, startY, event.touches[0].clientX - canvas.offsetLeft, event.touches[0].clientY - canvas.offsetTop);
+        startX = event.touches[0].clientX - canvas.offsetLeft;
+        startY = event.touches[0].clientY - canvas.offsetTop;
     }
+});
 
-    // Draw platforms
-    ctx.fillStyle = 'green';
-    for (let i = 0; i < platforms.length; i++) {
-        let platform = platforms[i];
-        ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
-    }
-
-    // Update score
-    score++;
-    document.getElementById('score').innerText = 'Score: ' + score;
-
-    // Request the next frame
-    requestAnimationFrame(update);
+// Function to draw a line between two points
+function drawLine(x1, y1, x2, y2) {
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 5;
+    ctx.stroke();
 }
-
-// Keyboard input
-const keysDown = {};
-document.addEventListener('keydown', (event) => {
-    keysDown[event.key] = true;
-});
-document.addEventListener('keyup', (event) => {delete keysDown[event.key];
-});
-
-// Start the game loop
-update();
