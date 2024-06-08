@@ -46,12 +46,22 @@
         </section>
         <section id="skills" class="box">
             <h2>🔧 Skills</h2>
-            <ul>
-                <li>Python: 🌑🌑🌑🌑🌑</li>
-                <li>JavaScript: 🌑🌑🌑🌑</li>
-                <li>C++: 🌑🌑</li>
-                <li>Swift: 🌑🌑</li>
-            </ul>
+            <div class="skill">
+                <p>Python</p>
+                <div class="skill-bar" data-skill="100"></div>
+            </div>
+            <div class="skill">
+                <p>JavaScript</p>
+                <div class="skill-bar" data-skill="80"></div>
+            </div>
+            <div class="skill">
+                <p>C++</p>
+                <div class="skill-bar" data-skill="40"></div>
+            </div>
+            <div class="skill">
+                <p>Swift</p>
+                <div class="skill-bar" data-skill="40"></div>
+            </div>
         </section>
         <section id="personal" class="box">
             <h2>🌟 Personal Constellations</h2>
@@ -66,22 +76,70 @@
         <section id="projects" class="box">
             <h2>🚀 Projects</h2>
             <ul>
-                <li>Fortnite-Version-Downloader: A CLI utility to download and archive various Fortnite versions across different seasons. Coded with ❤ by Void.</li>
-                <li>VVoiddd: Public</li>
-                <li>VVoiddd.github.io: Public - JavaScript Apache License 2.0</li>
-                <li>CheatHub-App-Main: Private - Source Code For The CheatHub Application</li>
-                <li>CheathubMain: Private</li>
-                <li>voided.lol: Private - The Official Voided.lol Website Source Code</li>
-                <li>LCAT: Public - LethalCompanyAdvancedTeleporter</li>
-                <li>Voidware-DLL-Injector: Public - The Voidware DLL Injector is a Windows-based tool designed for developers and tech enthusiasts. This utility enables the dynamic injection of DLLs into running processes, offering a user-friendly interface.</li>
-                <li>Proxodone: Public - Python</li>
-                <li>Swoofer-Test: Public - C++</li>
-                <li>Launcher-Test: Public - C#</li>
-                <li>Notepad-Pro: Public - C#</li>
-                <li>Momentum-Vbucks-On-Kill-V2: Public - TypeScript</li>
-                <li>RustSystemProfiler: Public - Rust</li>
-                <li>GoFyneStarterKit: Public - Go</li>
-                <li>shiny-dollop: Public - Python</li>
+                <li onclick="toggleDetails(this)">
+                    <span>Fortnite-Version-Downloader</span>
+                    <p class="details">A CLI utility to download and archive various Fortnite versions across different seasons. Coded with ❤ by Void.</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>VVoiddd</span>
+                    <p class="details">Public</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>VVoiddd.github.io</span>
+                    <p class="details">Public - JavaScript Apache License 2.0</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>CheatHub-App-Main</span>
+                    <p class="details">Private - Source Code For The CheatHub Application</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>CheathubMain</span>
+                    <p class="details">Private</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>voided.lol</span>
+                    <p class="details">Private - The Official Voided.lol Website Source Code</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>LCAT</span>
+                    <p class="details">Public - LethalCompanyAdvancedTeleporter</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>Voidware-DLL-Injector</span>
+                    <p class="details">Public - The Voidware DLL Injector is a Windows-based tool designed for developers and tech enthusiasts. This utility enables the dynamic injection of DLLs into running processes, offering a user-friendly interface.</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>Proxodone</span>
+                    <p class="details">Public - Python</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>Swoofer-Test</span>
+                    <p class="details">Public - C++</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>Launcher-Test</span>
+                    <p class="details">Public - C#</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>Notepad-Pro</span>
+                    <p class="details">Public - C#</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>Momentum-Vbucks-On-Kill-V2</span>
+                    <p class="details">Public - TypeScript</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>RustSystemProfiler</span>
+                    <p class="details">Public - Rust</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>GoFyneStarterKit</span>
+                    <p class="details">Public - Go</p>
+                </li>
+                <li onclick="toggleDetails(this)">
+                    <span>shiny-dollop</span>
+                    <p class="details">Public - Python</p>
+                </li>
             </ul>
         </section>
     </main>

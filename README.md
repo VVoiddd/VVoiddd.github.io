@@ -86,3 +86,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 &copy; 2024 Void. All rights reserved.
+
+---
+
+## Summary
+- **Enhanced Skill Visualization:** Displaying skill levels with animated progress bars.
+- **Smooth Scroll Animations:** Adding smooth scrolling and reveal animations as users scroll through the sections.
+- **Expandable Project Details:** Expanding and collapsing project details for better organization.
+
+## How to Use
+- Open the HTML file in a web browser.
+- Scroll through the sections to see animations and interactive elements.
+- Click on project titles to expand and view details.
