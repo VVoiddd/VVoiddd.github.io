@@ -1,7 +1,5 @@
 # About Me!
 
-
-
 Welcome to the repository for my personal "About Me" webpage! This project showcases my skills, technologies I use, and some of my public and private projects. It's designed to give a brief introduction to who I am and what I do.
 
 ### Greetings 🌑

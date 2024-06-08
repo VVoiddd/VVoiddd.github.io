@@ -4,12 +4,16 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
     text-align: center;
     padding: 20px;
     background-color: #1e1e1e;
+    width: 100%;
 }
 
 h1 {
@@ -26,15 +30,23 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    width: 100%;
 }
 
-section {
+.box {
     width: 100%;
     max-width: 800px;
     margin-bottom: 20px;
     padding: 20px;
     background-color: #1e1e1e;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
@@ -57,6 +69,7 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #1e1e1e;
+    width: 100%;
 }
 
 img {
