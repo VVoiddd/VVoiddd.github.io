@@ -14,11 +14,13 @@ header {
     padding: 20px;
     background-color: #1e1e1e;
     width: 100%;
+    animation: fadeIn 1.5s ease-out;
 }
 
 h1 {
     font-size: 2.5em;
     margin: 0;
+    animation: slideDown 1s ease-out;
 }
 
 p {
@@ -42,6 +44,14 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: boxFadeIn 0.8s forwards;
+}
+
+.box.show {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .box:hover {
@@ -82,45 +92,49 @@ ul li .details {
     margin: 10px 0;
 }
 
-.skill p {
-    margin: 0;
-}
-
 .skill-bar {
+    height: 20px;
     background-color: #292929;
     border-radius: 4px;
     overflow: hidden;
     position: relative;
-    height: 20px;
-    margin-top: 5px;
 }
 
-.skill-bar::before {
+.skill-bar::after {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 100%;
-    background-color: #5e0f80;
+    background-color: #ff9800;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 0;
-    transition: width 1s ease-out;
+    transition: width 1.5s ease-out;
 }
+
+.skill-bar[data-skill="100"]::after { width: 100%; }
+.skill-bar[data-skill="80"]::after { width: 80%; }
+.skill-bar[data-skill="40"]::after { width: 40%; }
 
 footer {
     text-align: center;
     padding: 20px;
     background-color: #1e1e1e;
     width: 100%;
-    position: fixed;
-    bottom: 0;
+    margin-top: auto;
+    animation: fadeIn 1.5s ease-out;
 }
 
-@media (min-width: 768px) {
-    main {
-        padding: 40px;
-    }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
-    .box {
-        padding: 40px;
-    }
+@keyframes slideDown {
+    from { transform: translateY(-20px); }
+    to { transform: translateY(0); }
+}
+
+@keyframes boxFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
