@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const boxes = document.querySelectorAll('.box');
+    const tools = document.querySelectorAll('.tool');
 
-    // Apply the 'show' class to each box to trigger the fade-in animation
-    boxes.forEach((box, index) => {
+    // Apply the 'show' class to each tool to trigger the fade-in animation
+    tools.forEach((tool, index) => {
         setTimeout(() => {
-            box.classList.add('show');
+            tool.classList.add('show');
         }, index * 200); // Stagger animation for a smoother effect
     });
 });

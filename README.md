@@ -1,60 +1,39 @@
-# Dev Wisdom
+# Web Tools Hub
 
-Welcome to **Dev Wisdom**, a simple, motivational website for developers. This site features inspirational quotes and practical tips to elevate your coding journey.
+Welcome to **Web Tools Hub**, your one-stop destination for web development tools.
 
 ## Table of Contents
 
-- [Features](#features)
+- [About](#about)
+- [Tools](#tools)
 - [Setup](#setup)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Features
+## About
 
-- **Inspirational Quotes**: Quotes to inspire and motivate developers.
-- **Practical Tips**: Daily tips to improve your coding practices.
-- **Smooth Animations**: Elegant animations to enhance user experience.
-- **Dark Theme**: A visually pleasing dark theme for comfortable reading.
+Web Tools Hub provides a collection of useful tools for web developers, including HTML formatters, CSS minifiers, JavaScript linters, and color pickers.
+
+## Tools
+
+- **HTML Formatter**: Easily format your HTML code for better readability and maintainability.
+- **CSS Minifier**: Minify your CSS files to optimize performance and reduce loading times.
+- **JavaScript Linter**: Check your JavaScript code for errors and ensure best practices.
+- **Color Picker**: Find the perfect color for your website with our intuitive color picker tool.
 
 ## Setup
 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/VVoiddd/VVoiddd.github.io.git
+    git clone https://github.com/yourusername/web-tools-hub.git
     ```
 
-2. Navigate to the project directory:
-
-    ```bash
-    cd VVoiddd.github.io
-    ```
-
-3. Open `index.html` in your preferred web browser.
-
-## Usage
-
-This is a static website, so all you need to do is open `index.html` in any web browser. The site features a header, a main content area with quotes and tips, and a footer. Enjoy the smooth animations and let the quotes and tips inspire your coding journey.
-
-## Project Structure
-
-VVoiddd.github.io/
-│
-├── index.html
-├── styles.css
-├── script.js
-└── README.md
-
-- **index.html**: The main HTML file containing the structure of the website.
-- **styles.css**: The CSS file for styling the website, including animations and dark theme.
-- **script.js**: The JavaScript file for adding interactive behaviors and animations.
-- **README.md**: This file, providing an overview and setup instructions for the project.
+2. Open the `index.html` file in your preferred web browser.
 
 ## Contributing
 
-We welcome contributions to improve this project. Here’s how you can help:
+Contributions are welcome to improve this project. Here's how you can help:
 
 1. Fork the repository.
 2. Create a new branch: `git checkout -b my-feature-branch`
@@ -64,4 +43,4 @@ We welcome contributions to improve this project. Here’s how you can help:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
