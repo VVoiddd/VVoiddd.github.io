@@ -63,58 +63,6 @@ h2 {
     margin-top: 0;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    background-color: #292929;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-ul li:hover {
-    background-color: #383838;
-}
-
-ul li .details {
-    display: none;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #444;
-}
-
-.skill {
-    margin: 10px 0;
-}
-
-.skill-bar {
-    height: 20px;
-    background-color: #292929;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-}
-
-.skill-bar::after {
-    content: '';
-    height: 100%;
-    background-color: #ff9800;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    transition: width 1.5s ease-out;
-}
-
-.skill-bar[data-skill="100"]::after { width: 100%; }
-.skill-bar[data-skill="80"]::after { width: 80%; }
-.skill-bar[data-skill="40"]::after { width: 40%; }
-
 footer {
     text-align: center;
     padding: 20px;
