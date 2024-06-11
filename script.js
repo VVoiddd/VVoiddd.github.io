@@ -8,12 +8,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }, index * 200); // Stagger animation for a smoother effect
     });
 });
-
-function toggleDetails(element) {
-    const details = element.querySelector('.details');
-    if (details.style.display === "none" || details.style.display === "") {
-        details.style.display = "block";
-    } else {
-        details.style.display = "none";
-    }
-}
