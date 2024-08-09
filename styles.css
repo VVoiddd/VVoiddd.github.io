@@ -1,1 +1,87 @@
-body,h1{margin:0}body,main{display:flex}a,h2{color:#007bff}body{background-color:#f0f0f0;color:#333;font-family:Arial,sans-serif;padding:0;flex-direction:column;align-items:center}.box,footer,header,main{width:100%;padding:20px}footer,header{text-align:center;background-color:#007bff;color:#fff}h1{font-size:2.5em}p{margin:5px 0 20px}main{flex-direction:column;align-items:center}.box{max-width:800px;margin-bottom:20px;background-color:#fff;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,.1)}h2{margin-top:0}a{display:block;text-decoration:none;margin-top:10px}a:hover{text-decoration:underline}
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header nav {
+    margin-top: 1rem;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 0.5rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main content styling */
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tool {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.tool h2 {
+    margin-top: 0;
+}
+
+.tool a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.tool a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styling */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
