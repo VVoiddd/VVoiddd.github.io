@@ -4,17 +4,17 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #121212; /* Dark grey background */
+    color: #e0e0e0; /* Light grey text */
 }
 
 /* Header styling */
 header {
-    background: #1e1e1e;
-    color: #e0e0e0;
+    background: #1e1e1e; /* Dark grey background */
+    color: #e0e0e0; /* Light grey text */
     padding: 2rem;
     text-align: center;
-    border-bottom: 3px solid #6a0dad;
+    border-bottom: 3px solid #6a0dad; /* Purple border */
 }
 
 header h1 {
@@ -28,7 +28,7 @@ header p {
 
 header .button {
     display: inline-block;
-    background-color: #6a0dad;
+    background-color: #6a0dad; /* Purple button */
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -38,7 +38,7 @@ header .button {
 }
 
 header .button:hover {
-    background-color: #4e00a4;
+    background-color: #4e00a4; /* Darker purple on hover */
 }
 
 /* Main content styling */
@@ -49,8 +49,8 @@ main {
 }
 
 .tool {
-    background: #1e1e1e;
-    border: 1px solid #333;
+    background: #1e1e1e; /* Dark grey background for tools */
+    border: 1px solid #333; /* Slightly lighter grey border */
     border-radius: 8px;
     margin-bottom: 1.5rem;
     padding: 1.5rem;
@@ -58,7 +58,7 @@ main {
 
 .tool h2 {
     margin-top: 0;
-    color: #6a0dad;
+    color: #6a0dad; /* Purple text for tool titles */
 }
 
 .tool p {
@@ -67,22 +67,22 @@ main {
 
 .tool a {
     display: inline-block;
-    color: #ffffff;
-    background-color: #6a0dad;
+    color: #ffffff; /* White text */
+    background-color: #6a0dad; /* Purple background for links */
     padding: 0.5rem 1rem;
     border-radius: 5px;
     text-decoration: none;
 }
 
 .tool a:hover {
-    background-color: #4e00a4;
+    background-color: #4e00a4; /* Darker purple on hover */
 }
 
 /* Footer styling */
 footer {
-    background: #1e1e1e;
-    color: #e0e0e0;
+    background: #1e1e1e; /* Dark grey background */
+    color: #e0e0e0; /* Light grey text */
     padding: 1rem;
     text-align: center;
-    border-top: 3px solid #6a0dad;
+    border-top: 3px solid #6a0dad; /* Purple border */
 }
