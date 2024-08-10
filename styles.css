@@ -1,20 +1,18 @@
-/* General styling */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Dark grey background */
-    color: #e0e0e0; /* Light grey text */
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
-/* Header styling */
 header {
-    background: #1e1e1e; /* Dark grey background */
-    color: #e0e0e0; /* Light grey text */
+    background: #1e1e1e;
+    color: #e0e0e0;
     padding: 2rem;
     text-align: center;
-    border-bottom: 3px solid #6a0dad; /* Purple border */
+    border-bottom: 3px solid #6a0dad;
 }
 
 header h1 {
@@ -28,7 +26,7 @@ header p {
 
 header .button {
     display: inline-block;
-    background-color: #6a0dad; /* Purple button */
+    background-color: #6a0dad;
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -38,10 +36,9 @@ header .button {
 }
 
 header .button:hover {
-    background-color: #4e00a4; /* Darker purple on hover */
+    background-color: #4e00a4;
 }
 
-/* Main content styling */
 main {
     padding: 2rem;
     max-width: 1200px;
@@ -49,16 +46,22 @@ main {
 }
 
 .tool {
-    background: #1e1e1e; /* Dark grey background for tools */
-    border: 1px solid #333; /* Slightly lighter grey border */
+    background: #1e1e1e;
+    border: 1px solid #333;
     border-radius: 8px;
     margin-bottom: 1.5rem;
     padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tool:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .tool h2 {
     margin-top: 0;
-    color: #6a0dad; /* Purple text for tool titles */
+    color: #6a0dad;
 }
 
 .tool p {
@@ -67,22 +70,21 @@ main {
 
 .tool a {
     display: inline-block;
-    color: #ffffff; /* White text */
-    background-color: #6a0dad; /* Purple background for links */
+    color: #ffffff;
+    background-color: #6a0dad;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     text-decoration: none;
 }
 
 .tool a:hover {
-    background-color: #4e00a4; /* Darker purple on hover */
+    background-color: #4e00a4;
 }
 
-/* Footer styling */
 footer {
-    background: #1e1e1e; /* Dark grey background */
-    color: #e0e0e0; /* Light grey text */
+    background: #1e1e1e;
+    color: #e0e0e0;
     padding: 1rem;
     text-align: center;
-    border-top: 3px solid #6a0dad; /* Purple border */
+    border-top: 3px solid #6a0dad;
 }
