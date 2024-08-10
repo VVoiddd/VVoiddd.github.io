@@ -21,5 +21,6 @@ Web Tools Hub provides a collection of useful tools for web developers, includin
 - **JavaScript Linter**: Check your JavaScript code for errors and ensure best practices.
 - **Color Picker**: Find the perfect color for your website with our intuitive color picker tool.
 
+## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
