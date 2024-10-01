@@ -1,16 +1,22 @@
+/* styles.css */
+
+/* Set body styles */
 html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
     height: 100%;
-    background-color: #fafafa;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+    font-family: Arial, sans-serif; /* Change font */
 }
 
+/* Style for the rat image */
 #rat-image {
     position: absolute;
     width: 150px;
     height: auto;
-    animation: spin 3s linear infinite;
+    transition: transform 0.1s ease; /* Smooth transitions */
 }
 
 /* Animation for spinning effect */

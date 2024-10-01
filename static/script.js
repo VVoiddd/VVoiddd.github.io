@@ -1,3 +1,5 @@
+// static/script.js
+
 document.addEventListener("DOMContentLoaded", function() {
     const rat1 = 'images/rat1.png';
     const rat2 = 'images/rat2.png';
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Apply the updated position
         ratImage.style.left = `${xPos}px`;
         ratImage.style.top = `${yPos}px`;
+        ratImage.style.animation = 'spin 3s linear infinite'; // Add spinning animation
 
         requestAnimationFrame(updatePosition);
     }
