@@ -6,11 +6,25 @@
     <title>Rats Gone Wild: Spin and Bounce Edition!</title>
     <meta name="description" content="Prepare for the ultimate rat showdown! Watch as our furry friends spin and bounce in zero gravity. Is it art or just chaos? You decide!">
     <meta name="author" content="Nikato Challenge">
-    <meta property="og:image" content="images/rat1.png"> 
+    <meta property="og:image" content="images/rat1.png">
     <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-    <img id="rat-image" src="" alt="Spinning Rat">
+    <!-- Rat images -->
+    <img id="rat1" src="images/rat1.png" alt="Rat 1">
+    <img id="rat2" src="images/rat2.png" alt="Rat 2">
+
+    <!-- Sidebar menu -->
+    <div id="menu">
+        <button id="toggle-menu">></button>
+        <div id="menu-content">
+            <button id="toggle-gravity">Toggle Gravity</button>
+            <label>Min Speed: <input type="number" id="min-speed" value="2"></label>
+            <label>Max Speed: <input type="number" id="max-speed" value="6"></label>
+            <button id="show-both-rats">Show Both Rats</button>
+        </div>
+    </div>
+
     <script src="static/script.js"></script>
 </body>
 </html>
