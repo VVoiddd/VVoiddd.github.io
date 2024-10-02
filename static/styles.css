@@ -1,26 +1,30 @@
-html, body {
+* {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    box-sizing: border-box;
+}
+
+html, body {
     height: 100%;
+    width: 100%;
     background-color: #121212;
-    color: white;
+    overflow: hidden;
     font-family: Arial, sans-serif;
 }
 
-/* Rats */
-.rat {
+/* Rat Image Styles */
+#rat1, #rat2 {
     position: absolute;
     width: 150px;
     height: auto;
-    animation: spin 4s linear infinite;
+    display: none; /* Initially hidden */
 }
 
-.hidden {
-    display: none;
+#rat1.active, #rat2.active {
+    display: block; /* Show active rat(s) */
 }
 
-/* Spinning keyframes */
+/* Spinning Animation */
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -30,31 +34,46 @@ html, body {
     }
 }
 
-/* Menu */
+/* Sidebar Styles */
 #menu {
-    position: fixed;
+    position: absolute;
+    left: -200px;
     top: 0;
-    left: 0;
-    width: 250px;
+    width: 200px;
     height: 100%;
     background-color: #333;
+    transition: left 0.3s ease;
+}
+
+#menu.open {
+    left: 0;
+}
+
+#toggle-menu {
+    position: absolute;
+    right: -30px;
+    top: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#menu-content {
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: transform 0.3s ease;
 }
 
-.menu-closed {
-    transform: translateX(-100%);
+button, input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
-#menu-toggle {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-}
-
-#close-menu {
-    align-self: flex-end;
+button:hover, input:hover {
+    background-color: #555;
 }
