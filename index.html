@@ -4,26 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rats Gone Wild: Spin and Bounce Edition!</title>
-    <meta name="description" content="Prepare for the ultimate rat showdown! Watch as our furry friends spin and bounce in zero gravity. Is it art or just chaos? You decide!">
-    <meta name="author" content="Nikato Challenge">
-    <meta property="og:image" content="images/rat1.png">
+    <meta name="description" content="Watch rats spin and bounce with customizable settings!">
     <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-    <!-- Rat images -->
-    <img id="rat1" src="images/rat1.png" alt="Rat 1">
-    <img id="rat2" src="images/rat2.png" alt="Rat 2">
+    <!-- Menu toggle button -->
+    <button id="menu-toggle">></button>
 
-    <!-- Sidebar menu -->
-    <div id="menu">
-        <button id="toggle-menu">></button>
-        <div id="menu-content">
-            <button id="toggle-gravity">Toggle Gravity</button>
-            <label>Min Speed: <input type="number" id="min-speed" value="2"></label>
-            <label>Max Speed: <input type="number" id="max-speed" value="6"></label>
-            <button id="show-both-rats">Show Both Rats</button>
-        </div>
+    <!-- Side menu -->
+    <div id="menu" class="menu-closed">
+        <button id="close-menu"><</button>
+        <h3>Settings</h3>
+        <label>
+            <input type="checkbox" id="gravity-toggle"> Toggle Gravity
+        </label>
+        <label>
+            Min Speed: <input type="number" id="min-speed" value="2">
+        </label>
+        <label>
+            Max Speed: <input type="number" id="max-speed" value="6">
+        </label>
+        <label>
+            <input type="checkbox" id="show-both"> Show Both Rats
+        </label>
+        <button id="apply-changes">Apply Changes</button>
     </div>
+
+    <!-- Rats -->
+    <img id="rat1" class="rat" src="images/rat1.png" alt="Rat 1">
+    <img id="rat2" class="rat hidden" src="images/rat2.png" alt="Rat 2">
 
     <script src="static/script.js"></script>
 </body>
