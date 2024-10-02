@@ -1,30 +1,25 @@
-* {
+/* styles.css */
+
+/* Set body styles */
+html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    width: 100%;
-    background-color: #121212;
     overflow: hidden;
-    font-family: Arial, sans-serif;
+    height: 100%;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+    font-family: Arial, sans-serif; /* Change font */
 }
 
-/* Rat Image Styles */
-#rat1, #rat2 {
+/* Style for the rat image */
+#rat-image {
     position: absolute;
     width: 150px;
     height: auto;
-    display: none; /* Initially hidden */
+    transition: transform 0.1s ease; /* Smooth transitions */
 }
 
-#rat1.active, #rat2.active {
-    display: block; /* Show active rat(s) */
-}
-
-/* Spinning Animation */
+/* Animation for spinning effect */
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -32,48 +27,4 @@ html, body {
     to {
         transform: rotate(360deg);
     }
-}
-
-/* Sidebar Styles */
-#menu {
-    position: absolute;
-    left: -200px;
-    top: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #333;
-    transition: left 0.3s ease;
-}
-
-#menu.open {
-    left: 0;
-}
-
-#toggle-menu {
-    position: absolute;
-    right: -30px;
-    top: 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-#menu-content {
-    padding: 20px;
-}
-
-button, input {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #444;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover, input:hover {
-    background-color: #555;
 }
