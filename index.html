@@ -3,14 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rats Gone Wild: Spin and Bounce Edition!</title>
-    <meta name="description" content="Prepare for the ultimate rat showdown! Watch as our furry friends spin and bounce in zero gravity. Is it art or just chaos? You decide!">
-    <meta name="author" content="Nikato Challenge">
-    <meta property="og:image" content="images/rat1.png"> 
-    <link rel="stylesheet" href="static/styles.css">
+    <title>About Void</title>
+    <meta name="description" content="Explore the universe of Void, a self-taught developer inspired by the vast silence of space.">
+    <style>
+        /* General body styling */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background animation canvas */
+        #background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Main container styling */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Header styling */
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #bbbbbb;
+        }
+
+        /* About section styling */
+        .about-section {
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        /* Button styling */
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+    </style>
 </head>
 <body>
-    <img id="rat-image" src="" alt="Spinning Rat">
-    <script src="static/script.js"></script>
+    <canvas id="background"></canvas>
+    <div class="container">
+        <header>
+            <h1>Void's Cosmic Space</h1>
+            <p>“In the vast expanse of space, we find meaning in the silence.” - Void</p>
+        </header>
+
+        <section class="about-section">
+            <h2>About Me</h2>
+            <p>I'm Void, a 19-year-old self-taught developer with three years of experience. My coding journey spans Python, JavaScript, C++, and Swift, with Python leading the way. Inspired by the quiet vastness of space, I tackle challenges with a cosmic mindset, always learning and evolving.</p>
+        </section>
+
+        <div class="button-container">
+            <button onclick="navigateTo('https://twitch.tv/voidedluvr')">Twitch</button>
+            <button onclick="navigateTo('https://kick.com/voidedluvr')">Kick</button>
+            <button onclick="navigateTo('https://github.com/VVoiddd')">GitHub</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            window.open(url, "_blank");
+        }
+
+        // Dot and line animation
+        const canvas = document.getElementById("background");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const dots = Array.from({ length: 100 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5
+        }));
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            dots.forEach(dot => {
+                dot.x += dot.vx;
+                dot.y += dot.vy;
+
+                if (dot.x < 0 || dot.x > canvas.width) dot.vx *= -1;
+                if (dot.y < 0 || dot.y > canvas.height) dot.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(dot.x, dot.y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = "#ffffff";
+                ctx.fill();
+
+                dots.forEach(otherDot => {
+                    const dx = dot.x - otherDot.x;
+                    const dy = dot.y - otherDot.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(dot.x, dot.y);
+                        ctx.lineTo(otherDot.x, otherDot.y);
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 100})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                });
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        animate();
+    </script>
 </body>
 </html>
