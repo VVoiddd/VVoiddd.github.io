@@ -1,24 +1,29 @@
-// Function to toggle iframe visibility
+// Show tooltip on hover over buttons
 document.getElementById("twitch-btn").addEventListener("mouseenter", function() {
-    document.getElementById("twitch-preview").style.display = "block";
+    showTooltip("Visit my Twitch channel where I stream mainly gaming like Kick!.");
 });
-
-document.getElementById("twitch-btn").addEventListener("mouseleave", function() {
-    document.getElementById("twitch-preview").style.display = "none";
-});
-
 document.getElementById("kick-btn").addEventListener("mouseenter", function() {
-    document.getElementById("kick-preview").style.display = "block";
+    showTooltip("Check out my Kick streams for gaming and other shenanigans!");
 });
-
-document.getElementById("kick-btn").addEventListener("mouseleave", function() {
-    document.getElementById("kick-preview").style.display = "none";
-});
-
 document.getElementById("github-btn").addEventListener("mouseenter", function() {
-    document.getElementById("github-preview").style.display = "block";
+    showTooltip("View my GitHub for open-source projects and contributions.");
 });
 
-document.getElementById("github-btn").addEventListener("mouseleave", function() {
-    document.getElementById("github-preview").style.display = "none";
+document.querySelectorAll(".social-btn").forEach(button => {
+    button.addEventListener("mouseleave", function() {
+        hideTooltip();
+    });
 });
+
+function showTooltip(message) {
+    const tooltip = document.getElementById("tooltip");
+    tooltip.textContent = message;
+    tooltip.style.display = "block";
+    tooltip.style.left = `${event.pageX + 10}px`;
+    tooltip.style.top = `${event.pageY + 10}px`;
+}
+
+function hideTooltip() {
+    const tooltip = document.getElementById("tooltip");
+    tooltip.style.display = "none";
+}

@@ -57,32 +57,26 @@ header p {
     background-color: #333;
 }
 
-/* Hidden iframe previews */
-.previews {
+/* Tooltip styling */
+.tooltip {
     display: none;
     position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 60%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
     z-index: 10;
-    border: 1px solid #444;
+    max-width: 300px;
 }
 
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* Display iframe when hovering over buttons */
-#twitch-btn:hover + #previews #twitch-preview,
-#kick-btn:hover + #previews #kick-preview,
-#github-btn:hover + #previews #github-preview {
-    display: block;
-}
-
-#twitch-preview, #kick-preview, #github-preview {
-    display: none;
+/* Tooltip positioning */
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
 }
