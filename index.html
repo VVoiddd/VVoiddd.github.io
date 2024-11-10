@@ -4,74 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Void</title>
-    <meta name="description" content="Explore the universe of Void, a self-taught developer inspired by the vast silence of space.">
-    <style>
-        /* Basic styling to ensure page loads correctly even without external CSS */
-        html, body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            height: 100%;
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Fallback styling */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
-    </style>
+    <meta name="description" content="Learn more about Void, a 19-year-old self-taught developer dedicated to growth and excellence.">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <canvas id="background"></canvas>
     <div class="container">
         <header>
-            <h1>Void's Cosmic Space</h1>
-            <p>“In the vast expanse of space, we find meaning in the silence.” - Void</p>
+            <h1>About Void</h1>
+            <p>“In the vastness of space, we find purpose in silence.” - Void</p>
         </header>
 
         <section class="about-section">
             <h2>About Me</h2>
-            <p>I'm Void, a 19-year-old self-taught developer with three years of experience. My coding journey spans Python, JavaScript, C++, and Swift, with Python leading the way. Inspired by the quiet vastness of space, I tackle challenges with a cosmic mindset, always learning and evolving.</p>
+            <p>I'm Void, a 19-year-old self-taught developer with three years of experience. I specialize in Python, JavaScript, C++, and Swift, with Python being my primary focus. Driven by a love for technology and the quiet vastness of space, I approach challenges with patience and determination, continuously learning and improving.</p>
         </section>
 
         <div class="button-container">
-            <button onclick="navigateTo('https://twitch.tv/voidedluvr')">Twitch</button>
-            <button onclick="navigateTo('https://kick.com/voidedluvr')">Kick</button>
-            <button onclick="navigateTo('https://github.com/VVoiddd')">GitHub</button>
+            <button class="social-btn" id="twitch-btn">Twitch</button>
+            <button class="social-btn" id="kick-btn">Kick</button>
+            <button class="social-btn" id="github-btn">GitHub</button>
+        </div>
+
+        <!-- Hidden iframes for platform previews -->
+        <div id="previews" class="previews">
+            <iframe id="twitch-preview" src="https://www.twitch.tv/voidedluvr" frameborder="0"></iframe>
+            <iframe id="kick-preview" src="https://kick.com/voidedluvr" frameborder="0"></iframe>
+            <iframe id="github-preview" src="https://github.com/VVoiddd" frameborder="0"></iframe>
         </div>
     </div>
 
-    <script>
-        // Dynamically load CSS
-        const loadCSS = (url) => {
-            const link = document.createElement("link");
-            link.rel = "stylesheet";
-            link.href = url;
-            document.head.appendChild(link);
-        };
-        
-        // Dynamically load JS
-        const loadJS = (url) => {
-            const script = document.createElement("script");
-            script.src = url;
-            document.body.appendChild(script);
-        };
-
-        // Load CSS and JS files
-        loadCSS("styles.css");
-        loadJS("script.js");
-
-        // Button navigation function
-        function navigateTo(url) {
-            window.open(url, "_blank");
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
