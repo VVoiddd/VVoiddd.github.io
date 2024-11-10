@@ -104,8 +104,12 @@
         const canvas = document.getElementById("background");
         const ctx = canvas.getContext("2d");
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas(); // Set initial canvas size
 
         const dots = Array.from({ length: 100 }, () => ({
             x: Math.random() * canvas.width,
@@ -121,14 +125,17 @@
                 dot.x += dot.vx;
                 dot.y += dot.vy;
 
+                // Reverse velocity if dot hits canvas boundaries
                 if (dot.x < 0 || dot.x > canvas.width) dot.vx *= -1;
                 if (dot.y < 0 || dot.y > canvas.height) dot.vy *= -1;
 
+                // Draw dot
                 ctx.beginPath();
                 ctx.arc(dot.x, dot.y, 2, 0, Math.PI * 2);
                 ctx.fillStyle = "#ffffff";
                 ctx.fill();
 
+                // Draw connecting lines if dots are close
                 dots.forEach(otherDot => {
                     const dx = dot.x - otherDot.x;
                     const dy = dot.y - otherDot.y;
@@ -147,11 +154,6 @@
 
             requestAnimationFrame(animate);
         }
-
-        window.addEventListener("resize", () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
 
         animate();
     </script>
