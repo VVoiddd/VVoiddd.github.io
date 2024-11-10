@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Void</title>
     <meta name="description" content="Explore the universe of Void, a self-taught developer inspired by the vast silence of space.">
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Dynamic loading of CSS -->
+    <script>
+        const loadCSS = (href) => {
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = href;
+            document.head.appendChild(link);
+        };
+        loadCSS("styles.css"); // Load the CSS file dynamically
+    </script>
 </head>
 <body>
     <canvas id="background"></canvas>
@@ -26,6 +36,20 @@
             <button onclick="navigateTo('https://github.com/VVoiddd')">GitHub</button>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Dynamic loading of JavaScript -->
+    <script>
+        const loadScript = (src, callback) => {
+            const script = document.createElement("script");
+            script.src = src;
+            script.onload = callback;
+            document.body.appendChild(script);
+        };
+
+        // Load the script.js file and start the animation after it loads
+        loadScript("script.js", () => {
+            console.log("script.js loaded successfully.");
+        });
+    </script>
 </body>
 </html>
