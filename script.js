@@ -1,49 +1,79 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Get the tooltip element
-    const tooltip = document.getElementById("tooltip");
+    const settingsBtn = document.getElementById("settings-btn");
+    const settingsSidebar = document.getElementById("settings-sidebar");
+    const themeOptions = document.querySelectorAll(".theme-option");
 
-    // Check if the tooltip element exists
-    if (!tooltip) {
-        console.error("Tooltip element not found!");
-        return;
-    }
+    // Open/Close the settings sidebar
+    settingsBtn.addEventListener("click", function() {
+        settingsSidebar.classList.toggle("open");
+    });
 
-    // Get all buttons
-    const buttons = document.querySelectorAll(".social-btn");
-
-    // Show tooltip on hover over buttons
-    buttons.forEach(button => {
-        button.addEventListener("mouseenter", function(event) {
-            let message = "";
-
-            // Define different messages for each button
-            if (button.id === "twitch-btn") {
-                message = "Visit my Twitch channel where I stream mainly gaming like Kick!";
-            } else if (button.id === "kick-btn") {
-                message = "Check out my Kick streams for gaming and other shenanigans!";
-            } else if (button.id === "github-btn") {
-                message = "View my GitHub for open-source projects and contributions.";
-            }
-
-            showTooltip(event, message);
-        });
-
-        // Hide tooltip when mouse leaves the button
-        button.addEventListener("mouseleave", function() {
-            hideTooltip();
+    // Handle theme change
+    themeOptions.forEach(option => {
+        option.addEventListener("click", function() {
+            const selectedTheme = option.getAttribute("data-theme");
+            setTheme(selectedTheme);
+            saveThemePreference(selectedTheme);
         });
     });
 
-    // Tooltip function to show the message
-    function showTooltip(event, message) {
-        tooltip.textContent = message;
-        tooltip.style.display = "block";
-        tooltip.style.left = `${event.pageX + 10}px`; // Add some offset for better positioning
-        tooltip.style.top = `${event.pageY + 10}px`;
+    // Set the theme (based on selection or saved preference)
+    function setTheme(theme) {
+        document.body.style.transition = "background-color 0.5s, color 0.5s"; // Smooth transition
+        if (theme === "dark") {
+            document.body.style.backgroundColor = "#121212";
+            document.body.style.color = "#ffffff";
+        } else if (theme === "light") {
+            document.body.style.backgroundColor = "#ffffff";
+            document.body.style.color = "#000000";
+        } else if (theme === "blue") {
+            document.body.style.backgroundColor = "#001f3d";
+            document.body.style.color = "#ffffff";
+        } else if (theme === "green") {
+            document.body.style.backgroundColor = "#2e8b57";
+            document.body.style.color = "#ffffff";
+        } else if (theme === "red") {
+            document.body.style.backgroundColor = "#b22222";
+            document.body.style.color = "#ffffff";
+        } else if (theme === "purple") {
+            document.body.style.backgroundColor = "#800080";
+            document.body.style.color = "#ffffff";
+        } else if (theme === "yellow") {
+            document.body.style.backgroundColor = "#ffcc00";
+            document.body.style.color = "#000000";
+        } else if (theme === "orange") {
+            document.body.style.backgroundColor = "#ff6600";
+            document.body.style.color = "#ffffff";
+        } else if (theme === "pink") {
+            document.body.style.backgroundColor = "#ff66b2";
+            document.body.style.color = "#ffffff";
+        } else if (theme === "gray") {
+            document.body.style.backgroundColor = "#808080";
+            document.body.style.color = "#000000";
+        } else if (theme === "teal") {
+            document.body.style.backgroundColor = "#008080";
+            document.body.style.color = "#ffffff";
+        } else if (theme === "indigo") {
+            document.body.style.backgroundColor = "#4b0082";
+            document.body.style.color = "#ffffff";
+        }
     }
 
-    // Hide tooltip function
-    function hideTooltip() {
-        tooltip.style.display = "none";
+    // Save the theme preference to localStorage
+    function saveThemePreference(theme) {
+        localStorage.setItem("theme", theme);
     }
+
+    // Load the saved theme from localStorage
+    function loadSavedTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme("dark"); // Default to dark theme
+        }
+    }
+
+    // Load saved theme on page load
+    loadSavedTheme();
 });
