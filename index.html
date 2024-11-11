@@ -4,35 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Void</title>
-    <meta name="description" content="Learn more about Void, a 19-year-old self-taught developer dedicated to growth and excellence.">
+    <meta name="description" content="Get to know Void, a driven developer exploring the potential of programming and technology.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <canvas id="background"></canvas>
     <div class="container">
         <header>
-            <h1>About Void</h1>
-            <p>“In the vastness of space, we find purpose in silence.” - Void</p>
+            <h1>Void's Digital Universe</h1>
+            <p>“In the vast expanse of space, we find meaning in the silence.” - Void</p>
         </header>
 
         <section class="about-section">
             <h2>About Me</h2>
-            <p>I'm Void, a 19-year-old self-taught developer with three years of experience. I specialize in Python, JavaScript, C++, and Swift, with Python being my primary focus. Driven by a love for technology and the quiet vastness of space, I approach challenges with patience and determination, continuously learning and improving.</p>
+            <p>I’m Void, a self-taught developer with three years of hands-on experience in Python, JavaScript, C++, and Swift, focusing especially on Python. Guided by a fascination with the quiet vastness of space, I’m always eager to learn and push boundaries.</p>
         </section>
 
         <div class="button-container">
-            <button class="social-btn" id="twitch-btn">Twitch</button>
-            <button class="social-btn" id="kick-btn">Kick</button>
-            <button class="social-btn" id="github-btn">GitHub</button>
+            <button class="hover-button" data-embed="twitch">Twitch</button>
+            <button class="hover-button" data-embed="kick">Kick</button>
+            <button class="hover-button" data-embed="github">GitHub</button>
         </div>
 
-        <!-- Hidden iframes for platform previews -->
-        <div id="previews" class="previews">
-            <iframe id="twitch-preview" src="https://www.twitch.tv/voidedluvr" frameborder="0"></iframe>
-            <iframe id="kick-preview" src="https://kick.com/voidedluvr" frameborder="0"></iframe>
-            <iframe id="github-preview" src="https://github.com/VVoiddd" frameborder="0"></iframe>
+        <!-- Embed previews (hidden iframes) -->
+        <div class="embed-container">
+            <iframe id="twitch" class="embed" src="https://twitch.tv/voidedluvr" loading="lazy"></iframe>
+            <iframe id="kick" class="embed" src="https://kick.com/voidedluvr" loading="lazy"></iframe>
+            <iframe id="github" class="embed" src="https://github.com/VVoiddd" loading="lazy"></iframe>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

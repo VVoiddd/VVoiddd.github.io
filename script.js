@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Set the theme (based on selection or saved preference)
     function setTheme(theme) {
-        document.body.style.transition = "background-color 0.5s, color 0.5s"; // Smooth transition
         if (theme === "dark") {
             document.body.style.backgroundColor = "#121212";
             document.body.style.color = "#ffffff";
@@ -28,33 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.style.color = "#000000";
         } else if (theme === "blue") {
             document.body.style.backgroundColor = "#001f3d";
-            document.body.style.color = "#ffffff";
-        } else if (theme === "green") {
-            document.body.style.backgroundColor = "#2e8b57";
-            document.body.style.color = "#ffffff";
-        } else if (theme === "red") {
-            document.body.style.backgroundColor = "#b22222";
-            document.body.style.color = "#ffffff";
-        } else if (theme === "purple") {
-            document.body.style.backgroundColor = "#800080";
-            document.body.style.color = "#ffffff";
-        } else if (theme === "yellow") {
-            document.body.style.backgroundColor = "#ffcc00";
-            document.body.style.color = "#000000";
-        } else if (theme === "orange") {
-            document.body.style.backgroundColor = "#ff6600";
-            document.body.style.color = "#ffffff";
-        } else if (theme === "pink") {
-            document.body.style.backgroundColor = "#ff66b2";
-            document.body.style.color = "#ffffff";
-        } else if (theme === "gray") {
-            document.body.style.backgroundColor = "#808080";
-            document.body.style.color = "#000000";
-        } else if (theme === "teal") {
-            document.body.style.backgroundColor = "#008080";
-            document.body.style.color = "#ffffff";
-        } else if (theme === "indigo") {
-            document.body.style.backgroundColor = "#4b0082";
             document.body.style.color = "#ffffff";
         }
     }
