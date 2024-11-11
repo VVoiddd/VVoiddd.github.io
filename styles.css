@@ -18,8 +18,6 @@ html, body {
     justify-content: center;
     height: 100vh;
     text-align: center;
-    max-width: 600px; /* Default layout size */
-    margin: 0 auto;
 }
 
 /* Header styling */
@@ -99,10 +97,6 @@ header p {
     transition: background-color 0.3s;
 }
 
-.settings-btn.open {
-    right: 250px; /* Move the button with the sidebar when open */
-}
-
 .settings-btn:hover {
     background-color: #444;
 }
@@ -134,30 +128,4 @@ header p {
 
 .theme-option:hover {
     background-color: #555;
-}
-
-/* Layout Option Styling */
-.layout-option {
-    background-color: #444;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.layout-option:hover {
-    background-color: #555;
-}
-
-/* Layout classes */
-.default {
-    max-width: 600px;
-}
-
-.compact {
-    max-width: 400px;
-}
-
-.extended {
-    max-width: 800px;
 }
