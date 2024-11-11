@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Get the tooltip element
+    const tooltip = document.getElementById("tooltip");
+
+    // Check if the tooltip element exists
+    if (!tooltip) {
+        console.error("Tooltip element not found!");
+        return;
+    }
+
     // Get all buttons
     const buttons = document.querySelectorAll(".social-btn");
 
@@ -27,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Tooltip function to show the message
     function showTooltip(event, message) {
-        const tooltip = document.getElementById("tooltip");
         tooltip.textContent = message;
         tooltip.style.display = "block";
         tooltip.style.left = `${event.pageX + 10}px`; // Add some offset for better positioning
@@ -36,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Hide tooltip function
     function hideTooltip() {
-        const tooltip = document.getElementById("tooltip");
         tooltip.style.display = "none";
     }
 });
