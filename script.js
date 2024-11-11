@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Open/Close the settings sidebar
     settingsBtn.addEventListener("click", function() {
         settingsSidebar.classList.toggle("open");
-        settingsBtn.classList.toggle("open");  // Ensure the settings button moves with the sidebar
+        settingsBtn.classList.toggle("open"); // Ensure the settings button moves with the sidebar
     });
 
     // Handle theme change
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         option.addEventListener("click", function() {
             const selectedLayout = option.getAttribute("data-layout");
             setLayout(selectedLayout);
+            saveLayoutPreference(selectedLayout);
         });
     });
 
@@ -90,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.remove("default", "compact", "extended");
         document.body.classList.add(layout);
 
-        // Adjust layouts for the page
         const container = document.querySelector('.container');
         if (layout === "compact") {
             container.style.maxWidth = "400px";
