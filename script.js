@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const themeOptions = document.querySelectorAll(".theme-option");
+    const themeButtons = document.querySelectorAll(".theme-btn");
 
     // Handle theme change
-    themeOptions.forEach(option => {
-        option.addEventListener("click", function() {
-            const selectedTheme = option.getAttribute("data-theme");
+    themeButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const selectedTheme = button.getAttribute("data-theme");
             setTheme(selectedTheme);
             saveThemePreference(selectedTheme);
         });
     });
 
-    // Set the theme (based on selection or saved preference)
+    // Set the theme with a smooth transition
     function setTheme(theme) {
         document.body.classList.remove("dark", "light", "blue");
         document.body.classList.add(theme);
