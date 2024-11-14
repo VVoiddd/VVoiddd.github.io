@@ -1,12 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const settingsBtn = document.getElementById("settings-btn");
-    const settingsSidebar = document.getElementById("settings-sidebar");
     const themeOptions = document.querySelectorAll(".theme-option");
-
-    // Open/Close the settings sidebar
-    settingsBtn.addEventListener("click", function() {
-        settingsSidebar.classList.toggle("open");
-    });
 
     // Handle theme change
     themeOptions.forEach(option => {
@@ -17,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Set the theme (based on selection or saved preference)
+    // Set the theme based on selection or saved preference
     function setTheme(theme) {
         if (theme === "dark") {
             document.body.style.backgroundColor = "#121212";
