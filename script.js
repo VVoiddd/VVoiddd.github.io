@@ -10,18 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Set the theme based on selection or saved preference
+    // Set the theme (based on selection or saved preference)
     function setTheme(theme) {
-        if (theme === "dark") {
-            document.body.style.backgroundColor = "#121212";
-            document.body.style.color = "#ffffff";
-        } else if (theme === "light") {
-            document.body.style.backgroundColor = "#ffffff";
-            document.body.style.color = "#000000";
-        } else if (theme === "blue") {
-            document.body.style.backgroundColor = "#001f3d";
-            document.body.style.color = "#ffffff";
-        }
+        document.body.classList.remove("dark", "light", "blue");
+        document.body.classList.add(theme);
     }
 
     // Save the theme preference to localStorage
