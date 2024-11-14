@@ -34,4 +34,3 @@ document.addEventListener("DOMContentLoaded", function() {
     // Load saved theme on page load
     loadSavedTheme();
 });
-
