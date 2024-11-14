@@ -16,6 +16,7 @@ body {
     text-align: center;
     padding: 20px;
     animation: fadeIn 1s ease-in-out;
+    width: 100%;
 }
 
 /* Header Styling */
@@ -136,4 +137,75 @@ body.blue .theme-btn {
 body.blue .social-btn {
     background-color: #003366;
     color: #fff;
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .intro-section p {
+        font-size: 1rem;
+        margin: 15px 0;
+    }
+
+    .skills-section ul {
+        padding-left: 0;
+    }
+
+    .social-links .social-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin: 5px;
+    }
+
+    .theme-selection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .theme-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .intro-section p {
+        font-size: 0.9rem;
+    }
+
+    .social-links .social-btn {
+        font-size: 12px;
+        padding: 8px 14px;
+        margin: 5px;
+    }
+
+    .theme-btn {
+        font-size: 0.9rem;
+    }
 }
