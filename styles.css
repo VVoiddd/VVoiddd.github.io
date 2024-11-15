@@ -22,9 +22,10 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 100%;
     text-align: center;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Header Styling */
@@ -112,7 +113,6 @@ header h1 {
 .changelogs li {
     margin: 5px 0;
 }
-
 
 /* Themes */
 body.dark {
@@ -205,4 +205,68 @@ body.green .social-btn {
 body.purple .social-btn {
     background-color: #660066;
     color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .intro-section p {
+        font-size: 0.9rem;
+    }
+
+    .theme-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .social-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .changelogs {
+        margin-top: 20px;
+        padding: 10px;
+    }
+}
+
+/* Mobile View (Phones) */
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .intro-section p {
+        font-size: 0.85rem;
+    }
+
+    .theme-btn {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .social-btn {
+        width: 100%;
+        padding: 12px 0;
+        margin: 5px 0;
+    }
 }
