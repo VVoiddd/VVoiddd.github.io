@@ -1,8 +1,18 @@
 /* General Styling */
+@font-face {
+    font-family: 'Moderniz';
+    src: url('Moderniz.otf');
+}
+
+@font-face {
+    font-family: 'Square';
+    src: url('Square.ttf');
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Moderniz', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,53 +25,28 @@ body {
     max-width: 600px;
     text-align: center;
     padding: 20px;
-    animation: fadeIn 1s ease-in-out;
 }
 
 /* Header Styling */
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    opacity: 1; /* Set to 1 to ensure it’s visible immediately */
-    animation: fadeIn 1.5s forwards;
 }
 
 .tagline {
     font-size: 1.2rem;
     color: #bbbbbb;
-    opacity: 1; /* Set to 1 for immediate visibility */
-    animation: slideUp 1.5s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Introduction Section */
 .intro-section p {
-    opacity: 1; /* Set to 1 for visibility */
-    animation: fadeIn 2s forwards;
+    font-size: 1rem;
 }
 
 /* Skills Section */
 .skills-section ul {
     list-style-type: none;
     padding: 0;
-    opacity: 1; /* Set to 1 for visibility */
-    animation: fadeIn 2s forwards;
 }
 
 .skills-section li {
@@ -91,6 +76,7 @@ header h1 {
 }
 
 .theme-btn {
+    font-family: 'Moderniz', Arial, sans-serif;
     background-color: #333;
     color: #fff;
     padding: 12px 25px;
@@ -107,122 +93,116 @@ header h1 {
     transform: scale(1.05);
 }
 
-/* Dark theme */
+/* Changelogs Section */
+.changelogs {
+    font-family: 'Square', Arial, sans-serif;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border-radius: 5px;
+    text-align: left; /* Align text to the left */
+}
+
+.changelogs ul {
+    list-style-type: none;
+    padding-left: 20px; /* Add some padding to the left for better readability */
+}
+
+.changelogs li {
+    margin: 5px 0;
+}
+
+
+/* Themes */
 body.dark {
     background-color: #121212;
     color: #ffffff;
 }
 
-body.dark .theme-btn {
-    background-color: #333;
-    color: #fff;
-}
-
-body.dark .social-btn {
-    background-color: #333;
-    color: #fff;
-}
-
-/* Light theme */
 body.light {
     background-color: #ffffff;
     color: #000000;
 }
 
-body.light .theme-btn {
-    background-color: #f1f1f1;
-    color: #000;
-}
-
-body.light .social-btn {
-    background-color: #f1f1f1;
-    color: #000;
-}
-
-/* Blue theme */
 body.blue {
     background-color: #001f3d;
     color: #ffffff;
 }
 
+body.red {
+    background-color: #3d0000;
+    color: #ffffff;
+}
+
+body.green {
+    background-color: #003d1f;
+    color: #ffffff;
+}
+
+body.purple {
+    background-color: #2a003d;
+    color: #ffffff;
+}
+
+/* Button colors by theme */
+body.dark .theme-btn {
+    background-color: #444;
+    color: #ffffff;
+}
+
+body.light .theme-btn {
+    background-color: #ddd;
+    color: #000;
+}
+
 body.blue .theme-btn {
-    background-color: #003366;
+    background-color: #004466;
+    color: #ffffff;
+}
+
+body.red .theme-btn {
+    background-color: #660000;
+    color: #ffffff;
+}
+
+body.green .theme-btn {
+    background-color: #006600;
+    color: #ffffff;
+}
+
+body.purple .theme-btn {
+    background-color: #660066;
+    color: #ffffff;
+}
+
+/* Social Button Colors by Theme */
+body.dark .social-btn {
+    background-color: #444;
     color: #fff;
+}
+
+body.light .social-btn {
+    background-color: #ddd;
+    color: #000;
 }
 
 body.blue .social-btn {
-    background-color: #003366;
+    background-color: #004466;
     color: #fff;
 }
 
-/* Responsive Design for Mobile Devices */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 15px;
-        width: 90%;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .tagline {
-        font-size: 1rem;
-    }
-
-    .intro-section p {
-        font-size: 1rem;
-        margin: 15px 0;
-    }
-
-    .skills-section ul {
-        padding-left: 0;
-    }
-
-    .social-links .social-btn {
-        font-size: 14px;
-        padding: 8px 16px;
-        margin: 5px;
-    }
-
-    .theme-selection {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .theme-btn {
-        width: 100%;
-        padding: 10px;
-        font-size: 1rem;
-    }
+body.red .social-btn {
+    background-color: #660000;
+    color: #fff;
 }
 
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    .tagline {
-        font-size: 0.9rem;
-    }
-
-    .intro-section p {
-        font-size: 0.9rem;
-    }
-
-    .social-links .social-btn {
-        font-size: 12px;
-        padding: 8px 14px;
-        margin: 5px;
-    }
-
-    .theme-btn {
-        font-size: 0.9rem;
-    }
+body.green .social-btn {
+    background-color: #006600;
+    color: #fff;
 }
 
+body.purple .social-btn {
+    background-color: #660066;
+    color: #fff;
+}
