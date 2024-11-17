@@ -19,10 +19,15 @@ body {
     height: 100vh;
     overflow: hidden;
     transition: background-color 0.5s, color 0.5s;
+    width: 100%;
+    background-color: #121212;
+    color: white;
 }
 
+/* Container for content */
 .container {
-    max-width: 100%;
+    width: 80%;
+    max-width: 1200px;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
@@ -30,7 +35,7 @@ body {
 
 /* Header Styling */
 header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 0.5rem;
 }
 
@@ -42,6 +47,8 @@ header h1 {
 /* Introduction Section */
 .intro-section p {
     font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 20px;
 }
 
 /* Skills Section */
@@ -77,7 +84,6 @@ header h1 {
 }
 
 .theme-btn {
-    font-family: 'Moderniz', Arial, sans-serif;
     background-color: #333;
     color: #fff;
     padding: 12px 25px;
@@ -96,18 +102,17 @@ header h1 {
 
 /* Changelogs Section */
 .changelogs {
-    font-family: 'Square', Arial, sans-serif;
     margin-top: 40px;
     padding: 10px;
     background-color: #1a1a1a;
     color: #fff;
     border-radius: 5px;
-    text-align: left; /* Align text to the left */
+    text-align: left;
 }
 
 .changelogs ul {
     list-style-type: none;
-    padding-left: 20px; /* Add some padding to the left for better readability */
+    padding-left: 20px;
 }
 
 .changelogs li {
@@ -145,6 +150,37 @@ body.purple {
     color: #ffffff;
 }
 
+/* New Themes */
+body.ocean {
+    background-color: #006f8e;
+    color: #ffffff;
+}
+
+body.sunset {
+    background-color: #ff4500;
+    color: #ffffff;
+}
+
+body.forest {
+    background-color: #2e8b57;
+    color: #ffffff;
+}
+
+body.cyberpunk {
+    background-color: #0f0f0f;
+    color: #00ff00;
+}
+
+body.space {
+    background-color: #001f2d;
+    color: #ffffff;
+}
+
+body.vintage {
+    background-color: #f4c542;
+    color: #000000;
+}
+
 /* Button colors by theme */
 body.dark .theme-btn {
     background-color: #444;
@@ -157,116 +193,72 @@ body.light .theme-btn {
 }
 
 body.blue .theme-btn {
-    background-color: #004466;
-    color: #ffffff;
+    background-color: #003366;
+    color: #fff;
 }
 
 body.red .theme-btn {
-    background-color: #660000;
-    color: #ffffff;
+    background-color: #990000;
+    color: #fff;
 }
 
 body.green .theme-btn {
-    background-color: #006600;
-    color: #ffffff;
+    background-color: #006400;
+    color: #fff;
 }
 
 body.purple .theme-btn {
-    background-color: #660066;
-    color: #ffffff;
-}
-
-/* Social Button Colors by Theme */
-body.dark .social-btn {
-    background-color: #444;
+    background-color: #800080;
     color: #fff;
 }
 
-body.light .social-btn {
-    background-color: #ddd;
+/* New Theme Button Styles */
+body.ocean .theme-btn {
+    background-color: #006f8e;
+    color: #fff;
+}
+
+body.sunset .theme-btn {
+    background-color: #ff4500;
+    color: #fff;
+}
+
+body.forest .theme-btn {
+    background-color: #2e8b57;
+    color: #fff;
+}
+
+body.cyberpunk .theme-btn {
+    background-color: #00ff00;
     color: #000;
 }
 
-body.blue .social-btn {
-    background-color: #004466;
+body.space .theme-btn {
+    background-color: #001f2d;
     color: #fff;
 }
 
-body.red .social-btn {
-    background-color: #660000;
-    color: #fff;
+body.vintage .theme-btn {
+    background-color: #f4c542;
+    color: #000;
 }
 
-body.green .social-btn {
-    background-color: #006600;
-    color: #fff;
-}
-
-body.purple .social-btn {
-    background-color: #660066;
-    color: #fff;
-}
-
-/* Responsive Styles */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-
     header h1 {
-        font-size: 2rem;
-    }
-
-    .tagline {
-        font-size: 1rem;
-    }
-
-    .intro-section p {
-        font-size: 0.9rem;
-    }
-
-    .theme-btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        font-size: 2.5rem;
     }
 
     .social-btn {
-        padding: 8px 15px;
+        padding: 8px 18px;
+    }
+
+    .theme-btn {
         font-size: 0.9rem;
+        padding: 10px 20px;
     }
 
     .changelogs {
-        margin-top: 20px;
-        padding: 10px;
-    }
-}
-
-/* Mobile View (Phones) */
-@media (max-width: 480px) {
-    .container {
-        max-width: 100%;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    .tagline {
-        font-size: 1rem;
-    }
-
-    .intro-section p {
-        font-size: 0.85rem;
-    }
-
-    .theme-btn {
-        width: 100%;
-        padding: 12px 0;
-    }
-
-    .social-btn {
-        width: 100%;
-        padding: 12px 0;
-        margin: 5px 0;
+        font-size: 0.9rem;
     }
 }

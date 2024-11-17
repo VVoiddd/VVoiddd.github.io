@@ -10,22 +10,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function setTheme(theme) {
-        document.body.classList.remove("dark", "light", "blue", "red", "green", "purple");
+        // Remove all existing theme classes
+        document.body.classList.remove(
+            "dark", "light", "blue", "red", "green", "purple",
+            "ocean", "sunset", "forest", "cyberpunk", "space", "vintage"
+        );
+        
+        // Add the selected theme class
         document.body.classList.add(theme);
     }
 
     function saveThemePreference(theme) {
+        // Save the selected theme in localStorage
         localStorage.setItem("theme", theme);
     }
 
     function loadSavedTheme() {
+        // Load the saved theme from localStorage (if any)
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme) {
             setTheme(savedTheme);
         } else {
+            // Default to dark theme if no theme is saved
             setTheme("dark");
         }
     }
 
-    loadSavedTheme();
+    loadSavedTheme(); // Load the saved theme on page load
 });
