@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "dark", "light", "blue", "red", "green", "purple",
             "ocean", "sunset", "forest", "cyberpunk", "space", "vintage"
         );
-        
+
         // Add the selected theme class
         document.body.classList.add(theme);
     }
