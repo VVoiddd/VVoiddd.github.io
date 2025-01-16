@@ -10,31 +10,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function setTheme(theme) {
-        // Remove all existing theme classes
         document.body.classList.remove(
             "dark", "light", "blue", "red", "green", "purple",
             "ocean", "sunset", "forest", "cyberpunk", "space", "vintage"
         );
-
-        // Add the selected theme class
         document.body.classList.add(theme);
     }
 
     function saveThemePreference(theme) {
-        // Save the selected theme in localStorage
         localStorage.setItem("theme", theme);
     }
 
     function loadSavedTheme() {
-        // Load the saved theme from localStorage (if any)
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme) {
             setTheme(savedTheme);
         } else {
-            // Default to dark theme if no theme is saved
             setTheme("dark");
         }
     }
 
     loadSavedTheme(); // Load the saved theme on page load
+
+    // Changelog toggle functionality
+    const changelogToggle = document.getElementById('changelog-toggle');
+    const changelogList = document.getElementById('changelog-list');
+
+    changelogToggle.addEventListener('click', () => {
+        if (changelogList.style.maxHeight) {
+            changelogList.style.maxHeight = null;
+            changelogToggle.innerHTML = "&#8595;"; // Change arrow to down
+        } else {
+            changelogList.style.maxHeight = changelogList.scrollHeight + "px"; // Set max-height to the scroll height
+            changelogToggle.innerHTML = "&#8593;"; // Change arrow to up
+        }
+    });
 });
