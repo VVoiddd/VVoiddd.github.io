@@ -117,3 +117,25 @@ h1 {
 .dark-mode .card:hover {
     background: rgba(93, 46, 153, 0.9);
 }
+footer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+    font-family: 'Moderniz', Arial, sans-serif;
+    padding: 10px;
+}
+
+footer p {
+    margin: 0;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+footer p:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
