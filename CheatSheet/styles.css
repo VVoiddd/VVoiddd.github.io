@@ -143,3 +143,31 @@ footer p:hover {
     color: #ffccff; /* Light pink glow effect */
     text-shadow: 0 0 8px #ff66ff, 0 0 15px #ff33ff;
 }
+/* Spice Container to align text and icons next to each other */
+.spice-container {
+    display: flex;
+    flex-direction: column; /* Stack icon, spice name, and bread name vertically */
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.spice-icon {
+    width: 50px; /* Adjust the size of the icon */
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.spice-icon:hover {
+    transform: scale(1.1);
+}
+
+.spice-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #c084fc;
+    text-align: center;
+}
