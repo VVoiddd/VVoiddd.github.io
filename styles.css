@@ -256,3 +256,18 @@ body.vintage {
         padding: 10px;
     }
 }
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #800080;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background: #a05adf;
+}
